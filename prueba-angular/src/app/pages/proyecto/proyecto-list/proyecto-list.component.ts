@@ -44,7 +44,7 @@ export class ProyectoListComponent implements OnInit, OnDestroy {
   }
 
   deleteItem(id: number) {
-    this.alertService.confirm('¿Seguro que deseas eliminar este proyecto?', 'Confirmar')
+    const subscr = this.alertService.confirm('¿Seguro que deseas eliminar este proyecto?', 'Confirmar')
       .subscribe((result) => {
         if (result) {
           this.alertService.showLoading();
@@ -62,6 +62,7 @@ export class ProyectoListComponent implements OnInit, OnDestroy {
           this.unsubscribe.push(subscr);
         }
       });
+    this.unsubscribe.push(subscr);
   }
 
   ngOnDestroy() {

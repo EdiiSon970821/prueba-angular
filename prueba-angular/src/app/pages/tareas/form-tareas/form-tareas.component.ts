@@ -72,7 +72,10 @@ export class FormTareasComponent implements OnInit, OnDestroy {
     if (this.tareaId === 'nuevo') {
       const formSubscr = this.tareasService.create(form).pipe(delay(500)).subscribe(() => {
         this.isLoading = false;
-        this.router.navigate(['/tareas', this.proyectoId]);
+        const alertSubscr = this.alertService.alert('Tarea creada exitosamente', 'Éxito').subscribe(() => {
+          this.router.navigate(['/tareas', this.proyectoId]);
+        })
+        this.unsubscribe.push(alertSubscr);
       }, err => {
         this.alertService.alert(err, 'Error');
         this.isLoading = false;
@@ -81,7 +84,10 @@ export class FormTareasComponent implements OnInit, OnDestroy {
     } else {
       const formSubscr = this.tareasService.update(this.tareaId, form).pipe(delay(500)).subscribe(() => {
         this.isLoading = false;
-        this.router.navigate(['/tareas', this.proyectoId]);
+        const alertSubscr = this.alertService.alert('Tarea editada exitosamente', 'Éxito').subscribe(() => {
+          this.router.navigate(['/tareas', this.proyectoId]);
+        })
+        this.unsubscribe.push(alertSubscr);
       }, err => {
          this.alertService.alert(err, 'Error');
         this.isLoading = false;

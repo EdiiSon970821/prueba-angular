@@ -71,7 +71,10 @@ export class FormProyectoComponent implements OnInit, OnDestroy {
     if (this.proyectoId === 'nuevo') {
       const formSubscr = this.proyectosService.create(form).pipe(delay(500)).subscribe(() => {
         this.isLoading = false;
-        this.router.navigate(['/proyectos']);
+        const alertSubscr = this.alertService.alert('Proyecto creado exitosamente', 'Éxito').subscribe(() => {
+          this.router.navigate(['/proyectos']);
+        })
+        this.unsubscribe.push(alertSubscr);
       }, err => {
         this.alertService.alert(err, 'Error');
         this.isLoading = false;
@@ -80,7 +83,10 @@ export class FormProyectoComponent implements OnInit, OnDestroy {
     } else {
       const formSubscr = this.proyectosService.update(this.proyectoId, form).pipe(delay(500)).subscribe(() => {
         this.isLoading = false;
-        this.router.navigate(['/proyectos']);
+        const alertSubscr = this.alertService.alert('Proyecto editado exitosamente', 'Éxito').subscribe(() => {
+          this.router.navigate(['/proyectos']);
+        })
+        this.unsubscribe.push(alertSubscr);
       }, err => {
         this.alertService.alert(err, 'Error');
         this.isLoading = false;

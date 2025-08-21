@@ -44,7 +44,7 @@ export class TareasListComponent implements OnInit, OnDestroy {
   }
 
   deleteItem(id: number, index: number) {
-    this.alertService.confirm('¿Seguro que deseas eliminar esta tarea?', 'Confirmar')
+    const subscr = this.alertService.confirm('¿Seguro que deseas eliminar esta tarea?', 'Confirmar')
       .subscribe((result) => {
         if (result) {
           this.alertService.showLoading();
@@ -58,6 +58,7 @@ export class TareasListComponent implements OnInit, OnDestroy {
           this.unsubscribe.push(subscr);
         }
       });
+    this.unsubscribe.push(subscr);
   }
 
   ngOnDestroy() {
