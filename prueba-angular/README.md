@@ -1,27 +1,39 @@
-# PruebaAngular
+# Gestión de proyectos y tareas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Este proyecto es una aplicación web desarrollada en Angular por Edinson Castillo para aplicar a la vacante como desarrollador front-end Angular
 
-## Development server
+# Tecnologías Utilizadas:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Angular 17.3.0
+Angular Material
+Bootstrap
+API pública: JSONPlaceholder
 
-## Code scaffolding
+# Instalación:
+Para ejecutar la aplicación localmente:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Clona el repositorio:
 
-## Build
+git clone https://github.com/EdiiSon970821/prueba-angular.git
+cd prueba-angular
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Instala las dependencias:
 
-## Running unit tests
+npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Inicia el servidor de desarrollo:
 
-## Running end-to-end tests
+ng serve
+Abre tu navegador y visita http://localhost:4200.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Uso:
 
-## Further help
+email: admin@admin.com
+contraseña: admin
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Aunque en el formulario ya se encuentre por defecto un email y una contraseña definido en src/assets se encontrara un archivo con formato .json llamado userLogin.json en donde se encontraran los emails con sus respectivas contraseñas para poder iniciar sesion en el aplicativo.
+
+
+En el presente documento se implemento mi conocimiento basada en mi ultima experiencia laboral donde ejecute labores parecidas a las pedidas en esta prueba.
+
+muchas gracias y quedo atento a cualquier inquietud.
