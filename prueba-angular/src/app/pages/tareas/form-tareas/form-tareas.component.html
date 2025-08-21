@@ -1,0 +1,20 @@
+<form class="form w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2 class="mb-3 text-muted">
+    Formulario Tarea
+  </h2>
+
+  <div class="row">
+    <div class="col-6">
+      <app-input-field label="Título" [control]="form.get('title')" type="text"></app-input-field>
+    </div>
+
+    <div class="col-6 d-flex align-items-center">
+      <app-switch label="¿Completada?" [control]="form.get('completed')"></app-switch>
+      <!-- <span class="px-3">¿Completada?</span><mat-slide-toggle color="primary" formControlName="completed"></mat-slide-toggle> -->
+    </div>
+  </div>
+
+  <div class="mt-3 text-end">
+    <app-button [text]="'Guardar'" [type]="'submit'" [isLoading]="isLoading" [disabled]="form.invalid"></app-button>
+  </div>
+</form>

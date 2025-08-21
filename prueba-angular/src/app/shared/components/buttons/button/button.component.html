@@ -1,0 +1,18 @@
+@if(!rutaUrl) {
+<button [type]="type" mat-raised-button color="primary" [disabled]="disabled || isLoading">
+  @if(isLoading) {
+  <span class="indicator-progress">
+    Cargando...
+    <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+  </span>
+  }@else {
+  <span>{{text}}</span>
+  }
+</button>
+}
+
+@if(rutaUrl) {
+<button [type]="type" mat-raised-button color="primary" [routerLink]="rutaUrl">
+  <span>{{text}}</span>
+</button>
+}

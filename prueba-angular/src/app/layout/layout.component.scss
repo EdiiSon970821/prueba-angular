@@ -1,0 +1,46 @@
+.app-layout {
+    height: 100vh;
+
+    mat-sidenav {
+        overflow: hidden;
+    }
+
+    .app-main-content {
+        overflow: hidden;
+    }
+
+    .app-sidebar {
+        width: 265px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #0d0e12;
+
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+
+    .app-navbar {
+        position: fixed;
+        top: 0;
+        left: 265px;
+        right: 0;
+        height: 64px;
+        z-index: 1000;
+        background-color: #fff;
+        color: white;
+    }
+
+    .app-content {
+        padding: 30px;
+        margin-top: 64px;
+        padding-bottom: 50px;
+        min-height: calc(100vh - 64px - 44px);
+        background-color: #fff;
+        overflow: auto;
+        height: calc(100vh - 64px);
+    }
+}

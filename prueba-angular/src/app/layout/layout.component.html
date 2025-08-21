@@ -1,0 +1,18 @@
+@if(loading) {
+  <app-loading></app-loading>
+}
+
+<mat-sidenav-container class="app-layout">
+  <mat-sidenav #ktSidebar mode="side" opened class="app-sidebar">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="app-main-content">
+    <app-nav class="app-navbar"></app-nav>
+
+    <div class="app-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

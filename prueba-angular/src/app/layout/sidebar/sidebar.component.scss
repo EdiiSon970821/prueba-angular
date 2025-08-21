@@ -1,0 +1,43 @@
+section {
+    height: 100vh;
+
+    header {
+        height: 64px;
+    }
+
+    .menu {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        height: calc(100vh - 64px - 44px);
+
+        a {
+            text-decoration: none;
+            padding: 8px 12px;
+            margin-bottom: 4px;
+            border-radius: 4px;
+            color: #9A9CAE;
+
+            &:active {
+                background-color: #1c1c21;
+            }
+
+            &:hover {
+                color: #F5F5F5;
+            }
+
+            span {
+                font-weight: 500;
+                font-size: 16px;
+            }
+        }
+    }
+
+    footer {
+        background-color: #0d0e12;
+        color: white;
+        bottom: 0;
+        padding: 10px;
+    }
+}

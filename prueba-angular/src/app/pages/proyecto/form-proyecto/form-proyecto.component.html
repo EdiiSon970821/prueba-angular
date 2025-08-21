@@ -1,0 +1,19 @@
+<form class="form w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2 class="mb-3 text-muted">
+    Formulario Proyecto
+  </h2>
+
+  <div class="row">
+    <div class="col-6">
+      <app-input-field label="Título" [control]="form.get('name')" type="text"></app-input-field>
+    </div>
+
+    <div class="col-6">
+      <app-text-area-field label="Descripción" [control]="form.get('catchPhrase')" type="text"></app-text-area-field>
+    </div>
+  </div>
+
+  <div class="mt-3 text-end">
+    <app-button [text]="'Guardar'" [type]="'submit'" [isLoading]="isLoading" [disabled]="form.invalid"></app-button>
+  </div>
+</form>

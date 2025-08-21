@@ -1,0 +1,19 @@
+<section>
+  <header>
+    <a routerLink="/">
+      <ng-container>
+        <img alt="Logo Angular" src="./assets/logos/logo-angular.png" height="100%" class="p-2" />
+      </ng-container>
+    </a>
+  </header>
+  <aside class="menu">
+    @for (item of items; track $index) {
+    <a [routerLink]="item.path" class="py-3"><span>{{item.name}}</span></a>
+    }
+  </aside>
+
+  <footer>
+    <app-footer class="d-block text-center app-footer"></app-footer>
+  </footer>
+
+</section>

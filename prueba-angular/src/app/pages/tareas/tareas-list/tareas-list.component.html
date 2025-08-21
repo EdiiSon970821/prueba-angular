@@ -1,0 +1,31 @@
+<section>
+  <div class="row mb-3">
+    <div class="col-12 text-end">
+      <app-button [text]="'Nueva tarea'" [type]="'button'" [rutaUrl]="'./form/nuevo'"></app-button>
+    </div>
+  </div>
+
+  <div class="row">
+    @for (item of tareasList; track $index) {
+    <div class="col-4 mb-5">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-subtitle>ID: {{item.id}}</mat-card-subtitle>
+          <mat-card-title>{{item.title}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="alert d-inline-block py-1 px-2"
+            [ngClass]="{'alert-success': item.completed, 'alert-danger': !item.completed}" role="alert">
+            {{item.completed! ? 'Completado' : 'No completado'}}
+          </div>
+          <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="default" [routerLink]="['./form', item.id]">Editar</button>
+          <button mat-button color="warn" (click)="deleteItem(item.id, $index)">Eliminar</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    }
+  </div>
+</section>

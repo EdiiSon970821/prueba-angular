@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>{{ data.title || 'Alerta' }}</h2>
+
+<mat-dialog-content>
+  {{ data.message }}
+</mat-dialog-content>
+
+<mat-dialog-actions class="p-3">
+  @if(data.showCancel) {
+    <button mat-button mat-dialog-close (click)="onCancel()">
+      {{ data.cancelText || 'Cancelar' }}
+    </button>
+  }
+
+  <button mat-button mat-dialog-close  cdkFocusInitial color="primary" (click)="onConfirm()" cdkFocusInitial>
+    {{ data.confirmText || 'Aceptar' }}
+  </button>
+</mat-dialog-actions>
