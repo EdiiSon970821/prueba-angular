@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit, OnDestroy{
     private route: ActivatedRoute
   ) {
     if (this.authService.isAuthenticated) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/']);
     }
   }
 
